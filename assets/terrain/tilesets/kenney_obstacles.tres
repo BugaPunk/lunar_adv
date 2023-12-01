@@ -647,6 +647,6 @@ terrain_set_0/terrain_0/name = "GreenTrees 0"
 terrain_set_0/terrain_0/color = Color(0.45098, 0.682353, 0.517647, 1)
 terrain_set_0/terrain_1/name = "YellowTrees"
 terrain_set_0/terrain_1/color = Color(0.823529, 0.74902, 0.529412, 1)
-sources/0 = SubResource("TileSetAtlasSource_2gcu3")
 sources/2 = SubResource("TileSetAtlasSource_fn3nc")
 sources/3 = SubResource("TileSetAtlasSource_mh5ko")
+sources/0 = SubResource("TileSetAtlasSource_2gcu3")
