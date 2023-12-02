@@ -1,0 +1,110 @@
+[gd_scene load_steps=12 format=3 uid="uid://b6c05bou455jn"]
+
+[ext_resource type="Script" path="res://scripts/menu_inicio.gd" id="1_5w4f5"]
+[ext_resource type="Texture2D" uid="uid://celyaafggwxqe" path="res://assets/menu/espacio.png" id="1_d67pk"]
+[ext_resource type="Script" path="res://scripts/ParallaxLayer.gd" id="1_gulr5"]
+[ext_resource type="Texture2D" uid="uid://didbdv0fms5aq" path="res://assets/menu/nave.png" id="2_45gpa"]
+[ext_resource type="Texture2D" uid="uid://c62jbekovaghx" path="res://assets/menu/astronauta.png" id="3_506vc"]
+[ext_resource type="Texture2D" uid="uid://ci3ad6oggixxu" path="res://assets/menu/moon.png" id="4_pplxs"]
+[ext_resource type="Texture2D" uid="uid://btr1vbt1crg8f" path="res://assets/menu/cuerda.png" id="4_wrkwe"]
+[ext_resource type="Texture2D" uid="uid://dospfj3m32g0p" path="res://assets/menu/mundito.png" id="5_22px6"]
+[ext_resource type="Texture2D" uid="uid://berftkuv7mfp7" path="res://assets/menu/Sun1.png" id="6_s4w3b"]
+[ext_resource type="Texture2D" uid="uid://bobbxmwgoporf" path="res://assets/menu/Sun2.png" id="7_slbgl"]
+[ext_resource type="FontFile" uid="uid://bfwhkm1b0btej" path="res://assets/fuentes/Gixel.ttf" id="10_jk582"]
+
+[node name="Menu_Inicio" type="Node2D"]
+script = ExtResource("1_5w4f5")
+
+[node name="ParallaxBackground" type="ParallaxBackground" parent="."]
+
+[node name="ParallaxLayer" type="ParallaxLayer" parent="ParallaxBackground"]
+motion_mirroring = Vector2(1300, 0)
+script = ExtResource("1_gulr5")
+
+[node name="spacio" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer"]
+position = Vector2(967, 541)
+scale = Vector2(2.93909, 2.45109)
+texture = ExtResource("1_d67pk")
+
+[node name="ParallaxLayer2" type="ParallaxLayer" parent="ParallaxBackground"]
+position = Vector2(302, 800)
+
+[node name="nave" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer2"]
+position = Vector2(222, 21)
+scale = Vector2(4.66146, 5.38281)
+texture = ExtResource("2_45gpa")
+
+[node name="ParallaxLayer3" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="cuerda" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer3"]
+position = Vector2(860.5, 910)
+scale = Vector2(1.32422, 1)
+texture = ExtResource("4_wrkwe")
+
+[node name="ParallaxLayer4" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Astronauta" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer4"]
+position = Vector2(1034, 898)
+scale = Vector2(0.660156, 0.601563)
+texture = ExtResource("3_506vc")
+
+[node name="ParallaxLayer5" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="mundito" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer5"]
+position = Vector2(1500, 384)
+scale = Vector2(5.125, 5.25)
+texture = ExtResource("5_22px6")
+
+[node name="ParallaxLayer6" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Moon" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer6"]
+position = Vector2(1756, 924.25)
+scale = Vector2(10.8437, 10.2578)
+texture = ExtResource("4_pplxs")
+
+[node name="ParallaxLayer7" type="ParallaxLayer" parent="ParallaxBackground"]
+
+[node name="Sprite2D" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+
+[node name="AnimacionSun" type="AnimatedSprite2D" parent="ParallaxBackground/ParallaxLayer7"]
+position = Vector2(102, 94)
+
+[node name="sun1" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7/AnimacionSun"]
+position = Vector2(438, 345)
+scale = Vector2(2.42188, 2)
+texture = ExtResource("6_s4w3b")
+
+[node name="sun2" type="Sprite2D" parent="ParallaxBackground/ParallaxLayer7/AnimacionSun"]
+position = Vector2(440, 351)
+scale = Vector2(2.25, 2.0625)
+texture = ExtResource("7_slbgl")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+offset_left = 627.0
+offset_top = 433.0
+offset_right = 1354.0
+offset_bottom = 716.0
+theme_override_constants/separation = 30
+
+[node name="jugar" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(0.941176, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_jk582")
+theme_override_font_sizes/font_size = 70
+text = "JUGAR
+"
+flat = true
+
+[node name="Salir" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_colors/font_hover_color = Color(1, 0, 0, 1)
+theme_override_colors/font_focus_color = Color(0, 0, 0, 1)
+theme_override_fonts/font = ExtResource("10_jk582")
+theme_override_font_sizes/font_size = 70
+text = "SALIR
+"
+flat = true
+
+[connection signal="pressed" from="VBoxContainer/jugar" to="." method="_on_jugar_pressed"]
+[connection signal="pressed" from="VBoxContainer/Salir" to="." method="_on_salir_pressed"]
